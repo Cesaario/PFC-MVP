@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Módulo de conforto</title>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="infoContainer" style="border-color: #00838f">
+        <div style="background-color: #00838f" class="tituloContainer">
+          INFORMAÇÕES DO SISTEMA
+        </div>
+      </div>
+      <div class="infoContainer" style="border-color: #f9a825">
+        <div style="background-color: #f9a825" class="tituloContainer">
+          AMBIENTE
+        </div>
+        <div class="containerVariaveis">
+          <div class="variavel">
+            <span style="margin-top: 15px">50°C</span>
+            <div class="medidor">
+              <div id="medidorTemperatura" class="clickerMedidor"></div>
+              <div id="valorTemperatura" class="valorMedidor"></div>
+            </div>
+            <span style="margin-bottom: 15px">0°C</span>
+            <span>TEMPERATURA</span>
+            <span id="valorTemperaturaTexto">25 °C</span>
+          </div>
+          <div class="variavel">
+            <span style="margin-top: 15px">100%</span>
+            <div class="medidor">
+              <div id="medidorUmidade" class="clickerMedidor"></div>
+              <div id="valorUmidade" class="valorMedidor"></div>
+            </div>
+            <span style="margin-bottom: 15px">0%</span>
+            <span>UMIDADE</span>
+            <span id="valorUmidadeTexto">25 °C</span>
+          </div>
+          <div class="variavel">
+            <span style="margin-top: 15px">120 dB</span>
+            <div class="medidor">
+              <div id="medidorSom" class="clickerMedidor"></div>
+              <div id="valorSom" class="valorMedidor"></div>
+            </div>
+            <span style="margin-bottom: 15px">0 dB</span>
+            <span>SOM</span>
+            <span id="valorSomTexto">25 °C</span>
+          </div>
+        </div>
+        <div class="config">
+          <input type="checkbox" id="scales" name="scales" onclick="clickAutomatico(this)" checked />
+          <span style="margin-left: 5px">Automático</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
