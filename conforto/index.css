@@ -50,6 +50,13 @@ body {
   justify-content: center;
 }
 
+.moduloContainer {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .variavel {
   display: flex;
   flex-direction: column;
@@ -61,14 +68,14 @@ body {
 
 .medidor {
   border-radius: 10px;
-  background-color: #CFD8DC;
+  background-color: #cfd8dc;
   height: 80%;
   width: 20%;
   position: relative;
-  margin: 5px
+  margin: 5px;
 }
 
-.config{
+.config {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -77,19 +84,62 @@ body {
   height: 15%;
 }
 
-.valorMedidor{
+.valorMedidor {
   position: absolute;
   bottom: 0;
   left: 0;
   border-radius: 10px;
   width: 100%;
-  background-color: #80CBC4;
+  background-color: #80cbc4;
+  transition: height 0.5s;
 }
 
-.clickerMedidor{
+.clickerMedidor {
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: 5;
   cursor: pointer;
+}
+
+.smiley {
+  margin-top: 30px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #ffc107;
+  position: relative;
+}
+
+.olhos {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100px;
+}
+
+.olho {
+  background-color: #0c0d13;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.sorriso {
+  position: absolute;
+  top: 50px;
+  left: 38px;
+  width: 75px;
+  height: 50px;
+  border-bottom: 10px solid #0c0d13;
+}
+
+.textosModulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
 }

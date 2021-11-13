@@ -4,6 +4,34 @@ let temperatura = 25;
 let umidade = 60;
 let som = 0;
 
+let conforto = 50;
+
+function calcularConforto() {
+  const deltaTemperatura = Math.abs(temperatura - 25);
+  const deltaUmidade = Math.abs(umidade - 60);
+  const deltaSom = som;
+
+  const confortoTemperatura = (1 - (deltaTemperatura / 25)) * 100;
+  const confortoUmidade = (1 - (deltaUmidade / 60)) * 100;
+  const confortoSom = (1 - (deltaSom / 120)) * 100;
+  
+  conforto = Math.min(confortoTemperatura, confortoUmidade, confortoSom);
+}
+
+function atualizarMedidorConforto() {
+  calcularConforto();
+  handleSmile(conforto);
+  document.getElementById("spanTemperatura").innerHTML = `Temperatura: ${Math.ceil(temperatura)} °C`
+  document.getElementById("spanUmidade").innerHTML = `Umidade: ${Math.ceil(umidade)}%`
+  document.getElementById("spanSom").innerHTML = `Som: ${Math.ceil(som)} dB`
+  document.getElementById("spanConforto").innerHTML = `Conforto: ${Math.ceil(conforto)}%`
+}
+
+function getCorSorriso(value) {
+  const hue = ((1 - value) * 120).toString(10);
+  return ["hsl(", hue, ",60%,60%)"].join("");
+}
+
 function clickAutomatico(element) {
   automatico = element.checked;
 }
@@ -11,13 +39,13 @@ function clickAutomatico(element) {
 function clicarMedidor(e, tipo) {
   const rect = e.target.getBoundingClientRect();
   const valorPorcentragem = 1 - e.offsetY / rect.height;
-  if(tipo === "temperatura"){
+  if (tipo === "temperatura") {
     temperatura = valorPorcentragem * 50;
   }
-  if(tipo === "umidade"){
+  if (tipo === "umidade") {
     umidade = valorPorcentragem * 100;
   }
-  if(tipo === "som"){
+  if (tipo === "som") {
     som = valorPorcentragem * 120;
   }
 
@@ -47,6 +75,18 @@ function atualizarMedidores() {
   document.getElementById("valorUmidadeTexto").innerHTML = `${Math.ceil(umidade)} %`
   document.getElementById("valorSom").style.height = `${Math.ceil((som / 120) * 100)}%`
   document.getElementById("valorSomTexto").innerHTML = `${Math.ceil(som)} dB`
+
+  atualizarMedidorConforto();
+}
+
+function handleSmile(conforto) {
+  const val = conforto;
+  const corSmile = getCorSorriso(1 - conforto / 100);
+  document.getElementById("sorriso").style.borderRadius = Math.abs(50 - val) + "%";
+  if (val < 50) document.getElementById("sorriso").style.transform = 'rotate(' + 180 + 'deg) translateY(-50px)';
+  else document.getElementById("sorriso").style.transform = 'rotate(' + 0 + 'deg)';
+
+  document.getElementById("smiley").style.backgroundColor = corSmile;
 }
 
 setTimeout(() => {
