@@ -1,0 +1,53 @@
+html,
+body {
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto, sans-serif;
+}
+body {
+  opacity: 0;
+  transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-width: 100px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+}
+
+a:link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #26a69a;
+}
