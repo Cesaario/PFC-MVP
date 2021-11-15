@@ -25,6 +25,8 @@ function rotinaIrrigador() {
     irrigador = false;
 
   document.getElementById("irrigador").style.display = irrigador ? "block" : "none";
+  document.getElementById("mensagemIrrigador").innerHTML = `Irrigador ${irrigador ? "Ligado" : "Desligado"}`
+  document.getElementById("mensagemIrrigador").style.color = irrigador ? "#66BB6A" : "#EF5350"
 }
 
 function atualizarMedidores() {
