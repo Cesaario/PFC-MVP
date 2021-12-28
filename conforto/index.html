@@ -25,15 +25,33 @@
             </div>
             <div class="sorriso" id="sorriso"></div>
           </div>
-          <div class="textosModulo">
-            <span id="spanTemperatura" style="margin-top: 20px"
-              >Temperatura: 25 °C</span
-            >
-            <span id="spanUmidade" style="margin-top: 5px">Umidade: 60%</span>
-            <span id="spanSom" style="margin-top: 5px">Som: 0 dB</span>
-            <span id="spanConforto" style="margin-top: 5px; text-decoration: underline;"
-              >Conforto: 100%</span
-            >
+          <div class="informacoesModulo">
+            <div class="textosModulo">
+              <span id="spanTemperatura" style="margin-top: 20px"
+                >Temperatura: 25 °C</span
+              >
+              <span id="spanUmidade" style="margin-top: 5px">Umidade: 60%</span>
+              <span id="spanSom" style="margin-top: 5px">Som: 0 dB</span>
+              <span
+                id="spanConforto"
+                style="margin-top: 5px; text-decoration: underline"
+                >Conforto: 100%</span
+              >
+            </div>
+            <div class="controlesModulo">
+              <div class="controlador">
+                <span>Ar-Condicionado Automático</span>
+                <br />
+                <input type="checkbox" onclick="handleInputControlador(this, 'arCondicionado')" />
+                <span>Ativar</span>
+              </div>
+              <div class="controlador">
+                <span>Umidificador Automático</span>
+                <br />
+                <input type="checkbox" onclick="handleInputControlador(this, 'umidificador')" />
+                <span>Ativar</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -74,14 +92,29 @@
           </div>
         </div>
         <div class="config">
-          <input
-            type="checkbox"
-            id="scales"
-            name="scales"
-            onclick="clickAutomatico(this)"
-            checked
-          />
-          <span style="margin-left: 5px">Automático</span>
+          <div class="controleVariaveisAutomaticas">
+            <span
+              >Variáveis de ambiente <br />
+              automáticas</span
+            >
+            <input
+              type="checkbox"
+              id="scales"
+              name="scales"
+              onclick="clickAutomatico(this)"
+              checked
+            />
+          </div>
+          <div class="statusControlador">
+            <span style="text-decoration: underline">Ar-Condicionado</span>
+            <br />
+            <span id="statusArCondicionado">-</span>
+          </div>
+          <div class="statusControlador">
+            <span style="text-decoration: underline">Umidificador</span>
+            <br />
+            <span id="statusUmidificador">-</span>
+          </div>
         </div>
       </div>
     </div>
