@@ -160,4 +160,4 @@ setInterval(() => {
   gerarValoresAmbiente();
   atualizarMedidores();
   rotinaControladores();
-}, 100);
+}, 800);

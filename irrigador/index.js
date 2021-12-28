@@ -64,4 +64,4 @@ setInterval(() => {
   rotinaJardim();
   atualizarMedidores();
   rotinaIrrigador();
-}, 250);
+}, 350);
